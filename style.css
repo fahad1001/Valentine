@@ -90,6 +90,13 @@ button:active {
     pointer-events: none;
 }
 
+.heart {
+    position: absolute;
+    font-size: 1.8rem;
+    animation: fly 0.8s linear;
+    pointer-events: none;
+}
+
 @keyframes fly {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(1.6); opacity: 0; }
@@ -113,3 +120,4 @@ footer {
         padding: 12px 16px;
     }
 }
+
