@@ -41,6 +41,10 @@
                 noButton.classList.add('shake');
                 generateEvilFaces();
             });
+
+			   yesButton.addEventListener('mouseenter', function () {
+                generateHeart();
+            });
             
             noButton.addEventListener('mouseleave', function () {
                 noButton.classList.remove('shake');
@@ -70,10 +74,30 @@
                     }, 1000);
                 }
             }
+
+			 function generateHeart() {
+                for (let i = 0; i < 5; i++) {
+                    let heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.classList.add('heart');
+                    document.body.appendChild(evilFace);
+                    
+                    let x = Math.random() * window.innerWidth;
+                    let y = Math.random() * window.innerHeight;
+                    
+                    evilFace.style.left = `${x}px`;
+                    evilFace.style.top = `${y}px`;
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 1000);
+                }
+            }
         });
     </script>
 </body>
 
 </html>
+
 
 
