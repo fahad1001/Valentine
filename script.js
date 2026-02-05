@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
         noButton.classList.add('shake');
         generateEvilFaces();
     });
+
+       yesButton.addEventListener('mouseenter', function () {
+        generateHeart();
+    });
     
     // No button stops shaking when the mouse leaves
     noButton.addEventListener('mouseleave', function () {
@@ -40,4 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1000);
         }
     }
+
+       function generateHeart() {
+        for (let i = 0; i < 5; i++) {
+            let evilFace = document.createElement('div');
+            evilFace.innerHTML = '❤️';
+            evilFace.classList.add('evil-face');
+            document.body.appendChild(evilFace);
+            
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            
+            evilFace.style.left = `${x}px`;
+            evilFace.style.top = `${y}px`;
+            
+            // Remove the emoji after 1 second
+            setTimeout(() => {
+                evilFace.remove();
+            }, 1000);
+        }
+    }
+
 });
